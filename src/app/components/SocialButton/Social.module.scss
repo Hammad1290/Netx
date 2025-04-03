@@ -1,0 +1,16 @@
+.SocialButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #d1d5db; 
+    border-radius: 12px; 
+    padding: 10px;
+    width: 100%;
+    height: 56px; 
+    font-weight: bold;
+    cursor: pointer;
+
+    .icon{
+        margin-right: 5px;
+    }
+}

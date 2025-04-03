@@ -1,0 +1,70 @@
+.layoutContainer{
+    display: flex;
+    height: 100vh;
+    @media (max-width: 768px) {
+        display: block;
+    }
+    .leftPane{
+        width: 50%;
+        background-color: #CC391BCC;
+        padding: 0 20px 50px 20px ;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+        .logoDiv{
+            padding: 50px;
+        }
+        .mySwiper{
+            height: 75vh;
+            @media (max-width: 768px) {
+                height: 60vh;
+            }
+        }
+        .swiper-pagination-bullet-active{
+            background: #fff !important;
+        }
+        .imageDiv{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contentDiv{
+            text-align: center;
+            color: #fff;
+            h2{
+                font-size: 30px;
+                margin-bottom: 10px;
+                font-weight: bold;
+                @media (max-width: 992px) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .rightPane{
+        width: 50%;
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 50px 0;
+        }
+        .rightContainer{
+            width: 100%;
+            height: -webkit-fill-available;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .rightWrapper{
+                width: 60%;
+                @media (max-width: 1200px) {
+                    width: 80%;
+                }
+                @media (max-width: 500px) {
+                    width: 90%;
+                }
+                .logoDiv{
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}
