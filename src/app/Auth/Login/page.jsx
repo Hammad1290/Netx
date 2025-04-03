@@ -20,7 +20,7 @@ const LoginPage = () => {
         if (!data.email) return toast.error('Email is not empty');
         if (!data.password) return toast.error('password is not empty');
 
-        if (data.email === "abc@gmail.com" && data.password == "123") {
+        if (data.email === "abc@gmail.com" && data.password == "12345") {
             router.push('/dashboard/new');
             toast.success('Login Successfully!');
             reset()
