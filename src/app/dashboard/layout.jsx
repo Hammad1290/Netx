@@ -1,10 +1,14 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import SideBar from '../components/sideBar'
+import DropdownBox from '../components/DropdownBox'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBell, faExclamationTriangle, faQuestion, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const Dashboard = ({ children }) => {
+
+    const [addNew, setAddNew] = useState('New');
+
     return (
         <>
             <div className='flex'>
@@ -14,11 +18,14 @@ const Dashboard = ({ children }) => {
                 <div className='w-full bg-gray-100'>
                     <div className="flex">
                         <div className="flex-1 flex flex-col">
-                            <div className="flex items-center justify-between p-3">
+                            <div className="flex items-center justify-between py-2 px-4">
                                 <div className="flex items-center space-x-4">
-                                    <div className="bg-gray-200 px-3 py-1 rounded-full flex gap-2">
-                                        New
-                                        <FontAwesomeIcon icon={faAngleDown} className='w-3 text-gray-500' />
+                                    <div className="bg-gray-200 px-3 py-1 rounded-full">
+                                        <DropdownBox
+                                            options={['Ticket', 'Contact', 'Customer', 'Invoice']}
+                                            selected={addNew}
+                                            onChange={setAddNew}
+                                        />
                                     </div>
                                     <div className="flex items-center bg-white px-3 py-1 rounded-full">
                                         <FontAwesomeIcon icon={faSearch} className='w-3 text-gray-500' />
@@ -37,7 +44,7 @@ const Dashboard = ({ children }) => {
                                     <div className="bg-black w-8 h-8 rounded-full flex items-center justify-center">
                                         <FontAwesomeIcon icon={faQuestion} className='w-2 text-white' />
                                     </div>
-                                    <div className="bg-gray-300 w-10 h-10 rounded-full flex items-center justify-center">
+                                    <div className="bg-gray-200 w-10 h-10 rounded-full flex items-center border border-gray-300 justify-center">
                                         <span className="">AA</span>
                                     </div>
                                 </div>

@@ -20,7 +20,7 @@ const SideBar = () => {
 
     return (
         <>
-            <div className={`bg-[#073c3f] text-white h-screen flex flex-col relative ${isCollapsed ? 'w-16' : 'w-64'}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >
+            <div className={`bg-[#073c3f] text-white h-full flex flex-col relative ${isCollapsed ? 'w-16' : 'w-64'}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} >
                 <div className={`flex items-center justify-center my-4 ${isCollapsed ? 'hidden' : 'block'}`}>
                     <Image
                         src='/logo.svg'

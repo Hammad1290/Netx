@@ -1,7 +1,10 @@
-
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import GridLayout from 'react-grid-layout';
+import 'react-grid-layout/css/styles.css';
+import 'react-resizable/css/styles.css';
 
 const DashboardHome = () => {
 
@@ -16,17 +19,25 @@ const DashboardHome = () => {
         { alertCount: '0', alertContent: 'Critical' },
     ]
 
+    const [layout, setLayout] = useState([
+        { i: 'ticket-status', x: 0, y: 0, w: 2, h: 2 },
+        { i: 'alert-status', x: 2, y: 0, w: 2, h: 2 },
+        { i: 'unassigned-tickets', x: 0, y: 2, w: 4, h: 3 },
+        { i: 'recent-alerts', x: 2, y: 2, w: 2, h: 3 },
+    ]);
+
+
     return (
         <>
             <div className="p-6 bg-gray-100 min-h-screen">
                 <div className='flex items-center justify-between'>
                     <h1 className="text-2xl font-semibold mb-4">Dashboard</h1>
                     <div className='flex gap-3'>
-                        <div className="bg-white px-3 py-1 rounded-full flex gap-2 border border-gray-300">
+                        <div className="bg-white px-3 py-1 rounded-full flex items-center justify-center gap-2 border border-gray-300">
                             New
                             <FontAwesomeIcon icon={faAngleDown} className='w-3 text-gray-500' />
                         </div>
-                        <div className="bg-white px-3 py-1 rounded-full flex gap-2 border border-gray-300">
+                        <div className="bg-white px-3 py-1 rounded-full flex items-center justify-center gap-2 border border-gray-300">
                             New
                             <FontAwesomeIcon icon={faAngleDown} className='w-3 text-gray-500' />
                         </div>
@@ -97,8 +108,46 @@ const DashboardHome = () => {
                             }
                         </div>
                     </div>
+                    <GridLayout
+                        className="layout"
+                        layout={layout}
+                        cols={4}
+                        rowHeight={100}
+                        width={1200}
+                        onLayoutChange={(newLayout) => setLayout(newLayout)}
+                        draggableHandle=".drag-handle"
+                    >
+                        <div key="unassigned-tickets" className="bg-white border border-gray-300 hover:border-black p-4 rounded-lg">
+                            <h2 className="text-lg font-semibold drag-handle cursor-move">Unassigned Tickets</h2>
+                            <table className="w-full mt-2 text-left text-sm">
+                                <thead>
+                                    <tr className="text-gray-500">
+                                        <th>Details</th>
+                                        <th>Technician</th>
+                                        <th>Priority</th>
+                                        <th>SLA</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <hr className='text-gray-300 my-3' />
+                        </div>
+                        <div key="recent-alerts" className="bg-white border border-gray-300 hover:border-black p-4 rounded-lg">
+                            <h2 className="text-lg font-semibold drag-handle cursor-move">Recent Alerts</h2>
+                            <p>No alerts at the moment.</p>
+                        </div>
+                        <div key="ticket-status" className="bg-white border border-gray-300 hover:border-black p-4 rounded-lg">
+                            <h2 className="text-lg font-semibold drag-handle cursor-move">Ticket Status</h2>
+                            <p>Open: 1 | Pending: 0 | Due today: 0 | Overdue: 0</p>
+                        </div>
+                        <div key="alert-status" className="bg-white border border-gray-300 hover:border-black p-4 rounded-lg">
+                            <h2 className="text-lg font-semibold drag-handle cursor-move">Alert Status</h2>
+                            <p>Warning: 0 | Critical: 0</p>
+                        </div>
+
+                    </GridLayout>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+
+                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                     <div className="bg-white p-4 rounded-lg border border-gray-300 hover:border-black">
                         <h2 className="font-semibold">Unassigned tickets</h2>
                         <table className="w-full mt-2 text-left text-sm">
@@ -117,7 +166,7 @@ const DashboardHome = () => {
                     <div className="bg-white p-4 rounded-lg border border-gray-300 hover:border-black">
                         <h2 className="font-semibold">Recent alerts</h2>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )
