@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faTrash, faUserCheck, faFilter } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faTrash, faUserCheck } from '@fortawesome/free-solid-svg-icons'
 import SelectBox from '@/app/components/SelectBox'
 import DropdownBox from '@/app/components/DropdownBox'
 import Link from 'next/link';
+import Image from "next/image";
 import FilterBox from '@/app/components/Filter'
-import FilterSelectBox from '@/app/components/Filter/FilterSelectBox'
 
 const Tickets = () => {
 
@@ -25,7 +25,7 @@ const Tickets = () => {
     };
 
     const buttonClick = () => {
-        alert('AKNCKNC')
+        alert('This ticket is deleted')
     }
 
 
@@ -101,20 +101,22 @@ const Tickets = () => {
                                             </div>
                                             <p className='mt-2 text-gray-400'>Displaying 1 of 1 tickets</p>
                                         </div>
-                                        <div className='flex items-center gap-4'>
+                                        <div className='flex items-center w-80 gap-4'>
                                             <SelectBox
                                                 options={['Default view', 'Spam tickets']}
                                                 selected={view}
                                                 onChange={setView}
+                                                searchplaceholder={['Search view']}
                                             />
                                             <FilterBox />
                                         </div>
                                     </div>
                                     <hr className='text-gray-300' />
-                                    <div className="p-4">
+                                    <div>
                                         <table className="w-full text-left text-sm">
                                             <thead>
-                                                <tr className="text-gray-500">
+                                                <tr className="text-gray-500 border-b border-gray-300 h-[60px]">
+                                                    <th></th>
                                                     <th></th>
                                                     <th>Details</th>
                                                     <th>SLA</th>
@@ -126,13 +128,23 @@ const Tickets = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr className="mt-4">
+                                                <tr className="border-b border-gray-300 h-[100px] hover:bg-gray-50">
                                                     <td>
                                                         <input
                                                             type="checkbox"
                                                             checked={isChecked}
                                                             onChange={handleCheckboxChange}
-                                                            className="w-4 h-4" />
+                                                            className="w-4 h-4 ml-4" />
+                                                    </td>
+                                                    <td className='flex items-center justify-center' style={{ height: 'inherit' }}>
+                                                        <div className='border border-gray-200 p-2 rounded w-fit'>
+                                                            <Image
+                                                                src='/suitcase.svg'
+                                                                alt="logo"
+                                                                width={50}
+                                                                height={50}
+                                                            />
+                                                        </div>
                                                     </td>
                                                     <td>
                                                         <div className="flex flex-col">

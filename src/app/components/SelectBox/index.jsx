@@ -2,9 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown, faSearch } from '@fortawesome/free-solid-svg-icons'
 
-const SelectBox = ({ options, selected, onChange }) => {
+const SelectBox = ({ options, selected, onChange, searchplaceholder }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState('');
     const dropdownRef = useRef(null);
@@ -24,7 +24,7 @@ const SelectBox = ({ options, selected, onChange }) => {
     }, []);
 
     return (
-        <div className="relative w-60" ref={dropdownRef}>
+        <div className="relative w-full" ref={dropdownRef}>
             <button
                 className="w-full border border-gray-300 rounded px-4 py-2 text-left bg-white shadow-sm flex justify-between items-center cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
@@ -35,13 +35,16 @@ const SelectBox = ({ options, selected, onChange }) => {
 
             {isOpen && (
                 <div className="absolute z-10 mt-2 w-full bg-white border border-gray-300 rounded shadow-lg">
-                    <input
-                        type="text"
-                        placeholder="Search view"
-                        className="w-full px-3 py-2 text-sm outline-none placeholder-gray-400"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
+                    <div className='flex items-center border-b border-gray-300 w-full px-3 py-2'>
+                        <FontAwesomeIcon icon={faSearch} className='w-3 text-gray-500 mr-3' />
+                        <input
+                            type="text"
+                            placeholder={searchplaceholder}
+                            className="w-full text-sm outline-none  placeholder-gray-400"
+                            value={search}
+                            onChange={(e) => setSearch(e.target.value)}
+                        />
+                    </div>
 
                     <ul className="max-h-48 overflow-y-auto">
                         {filteredOptions.map((option) => (
