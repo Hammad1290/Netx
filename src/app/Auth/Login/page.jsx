@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
 import style from './LoginPage.module.scss'
-import InputBox from '@/app/components/Input';
-import Button from '@/app/components/Button';
-import SocialButtons from '@/app/components/SocialButton';
+import InputBox from '@/app/components/AuthComponents/Input';
+import Button from '@/app/components/AuthComponents/Button';
+import SocialButtons from '@/app/components/AuthComponents/SocialButton';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'

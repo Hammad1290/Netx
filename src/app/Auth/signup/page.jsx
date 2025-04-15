@@ -1,8 +1,8 @@
 import React from 'react'
 import style from './SignupPage.module.scss'
-import InputBox from '@/app/components/Input';
-import Button from '@/app/components/Button';
-import SocialButtons from '@/app/components/SocialButton';
+import InputBox from '@/app/components/AuthComponents/Input';
+import Button from '@/app/components/AuthComponents/Button';
+import SocialButtons from '@/app/components/AuthComponents/SocialButton';
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
 

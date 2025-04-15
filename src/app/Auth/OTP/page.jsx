@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
 import style from './OTP.module.scss'
-import InputBox from '@/app/components/Input';
-import Button from '@/app/components/Button';
-import OTPInput from '@/app/components/OTPInput';
+import InputBox from '@/app/components/AuthComponents/Input';
+import Button from '@/app/components/AuthComponents/Button';
+import OTPInput from '@/app/components/AuthComponents/OTPInput';
 import Link from 'next/link';
 
 const OTP = () => {

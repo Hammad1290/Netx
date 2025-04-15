@@ -33,7 +33,7 @@ const addCustomer = () => {
         <>
             <div className="p-6 bg-white min-h-screen">
                 <div className='flex items-center justify-between mb-4'>
-                    <h1 className="text-xl font-semibold ">New Ticket</h1>
+                    <h1 className="text-xl font-semibold ">New Customer</h1>
                     <div className='flex items-center gap-4'>
                         <Link href='/dashboard/customers' className='bg-gray-200 border border-gray-300 px-4 py-2 rounded-full text-center'>
                             Cancle

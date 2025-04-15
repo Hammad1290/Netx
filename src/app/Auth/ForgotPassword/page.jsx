@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './ForgotPassword.module.scss'
-import InputBox from '@/app/components/Input';
-import Button from '@/app/components/Button';
+import InputBox from '@/app/components/AuthComponents/Input';
+import Button from '@/app/components/AuthComponents/Button';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './VerifyEmail.module.scss'
-import Button from '@/app/components/Button';
+import Button from '@/app/components/AuthComponents/Button';
 import Link from 'next/link';
 
 const VerifyEmail = () => {

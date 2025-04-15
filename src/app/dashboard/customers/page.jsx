@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faTrash } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link';
 import Image from "next/image";
-import DropdownBox from '@/app/components/DropdownBox';
+import DropdownBox from '@/app/components/DashboardComponents/DropdownBox';
 import FilterBox from '@/app/components/Filter';
 
 const Customers = () => {

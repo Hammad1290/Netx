@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
-import SideBar from '../components/sideBar'
-import DropdownBox from '../components/DropdownBox'
+import SideBar from '../components/DashboardComponents/sideBar'
+import DropdownBox from '../components/DashboardComponents/DropdownBox'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBell, faExclamationTriangle, faQuestion, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 

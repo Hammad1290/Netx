@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Link from 'next/link'
-import SelectBox from '@/app/components/SelectBox'
+import SelectBox from '@/app/components/DashboardComponents/SelectBox'
 
 const addContact = () => {
 
