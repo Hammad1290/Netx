@@ -33,8 +33,8 @@ const Tickets = () => {
     return (
         <>
             <div className="p-6 bg-gray-100 min-h-screen">
-                <div className='flex items-center justify-between'>
-                    <h1 className="text-xl font-semibold mb-4">Tickets</h1>
+                <div className='flex items-center justify-between mb-2'>
+                    <h1 className="text-lg font-semibold">Tickets</h1>
                     <Link href='/dashboard/ticket/add' className='bg-red-600 px-4 py-1 rounded-full text-center text-white'>
                         New Ticket
                     </Link>
@@ -106,6 +106,7 @@ const Tickets = () => {
                                                 options={['Default view', 'Spam tickets']}
                                                 selected={view}
                                                 onChange={setView}
+                                                className='border border-gray-300'
                                                 searchplaceholder={['Search view']}
                                             />
                                             <FilterBox />
@@ -194,6 +195,7 @@ const Tickets = () => {
                                                                 options={['Open', 'Pending', 'Resolved', 'Closed', 'Deleted']}
                                                                 selected={status}
                                                                 onChange={setStatus}
+                                                                className={`${status === 'Open' ? 'text-blue-500' : status === 'Pending' ? 'text-yellow-500' : status === 'Resolved' ? 'text-green-500' : status === 'Closed' ? 'text-purple-500' : status === 'Deleted' ? 'text-red-500' : null}`}
                                                             />
                                                         </div>
                                                     </td>

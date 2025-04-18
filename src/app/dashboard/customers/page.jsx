@@ -77,8 +77,8 @@ const Customers = () => {
     return (
         <>
             <div className="p-6 bg-gray-100 min-h-screen">
-                <div className='flex items-center justify-between'>
-                    <h1 className="text-2xl font-semibold mb-4">Customers</h1>
+                <div className='flex items-center justify-between mb-2'>
+                    <h1 className="text-lg font-semibold">Customers</h1>
                     <Link href='/dashboard/customers/add' className='bg-red-600 px-4 py-1 rounded-full text-center text-white'>
                         New Customers
                     </Link>

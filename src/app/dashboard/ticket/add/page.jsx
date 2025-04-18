@@ -47,6 +47,7 @@ const addTicket = () => {
                                 options={['Unassigned']}
                                 selected={selectCustomer}
                                 onChange={setSelectCustomer}
+                                className='border border-gray-300'
                                 searchplaceholder={['Search Customer']}
                             />
                         </div>
@@ -57,6 +58,7 @@ const addTicket = () => {
                                 options={['John Smith']}
                                 selected={selectContact}
                                 onChange={setSelectContact}
+                                className='border border-gray-300'
                                 searchplaceholder={['Search Contact']}
                             />
                             <Link href='/dashboard/contact/add' className="mt-1 text-blue-600 text-sm">+ Add contact</Link>

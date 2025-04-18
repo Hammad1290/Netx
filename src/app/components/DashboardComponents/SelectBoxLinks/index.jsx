@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-const SelectBoxLinks = ({ options, selected, setSelected, onModalTrigger }) => {
+const SelectBoxLinks = ({ options, buttonName, setSelected, onModalTrigger, className, iconColor }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -32,11 +32,11 @@ const SelectBoxLinks = ({ options, selected, setSelected, onModalTrigger }) => {
         <>
             <div className="relative" ref={dropdownRef}>
                 <button
-                    className="bg-red-600 px-4 py-1 rounded-full text-center text-white flex items-center gap-2 cursor-pointer"
+                    className={`${className} px-4 py-1 rounded-full text-center flex items-center gap-2 cursor-pointer`}
                     onClick={() => setIsOpen(!isOpen)}
                 >
-                    <span>New Device</span>
-                    <FontAwesomeIcon icon={faAngleDown} className="w-3 text-white-500" />
+                    <span>{buttonName}</span>
+                    <FontAwesomeIcon icon={faAngleDown} className={`w-3 ${iconColor}`} />
                 </button>
 
                 {isOpen && (

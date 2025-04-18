@@ -55,6 +55,7 @@ const TCP = () => {
                             options={['Unassigned']}
                             selected={selectCustomer}
                             onChange={setSelectCustomer}
+                            className='border border-gray-300'
                             searchplaceholder={['Search Customer']}
                         />
                     </div>

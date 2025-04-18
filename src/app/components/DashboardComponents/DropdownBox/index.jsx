@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
-const DropdownBox = ({ options, selected, onChange }) => {
+const DropdownBox = ({ options, selected, onChange, className }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -24,8 +24,8 @@ const DropdownBox = ({ options, selected, onChange }) => {
                 className="rounded-full text-xs flex justify-center items-center gap-2 cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <span>{selected}</span>
-                <FontAwesomeIcon icon={faAngleDown} className='w-3 text-gray-500' />
+                <span className={`${className}`}>{selected}</span>
+                <FontAwesomeIcon icon={faAngleDown} className={`w-3 ${className}`} />
             </button>
 
             {isOpen && (

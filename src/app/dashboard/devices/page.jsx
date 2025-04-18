@@ -61,13 +61,16 @@ const Devices = () => {
     return (
         <>
             <div className="p-6 bg-gray-100 min-h-screen">
-                <div className='flex items-center justify-between'>
-                    <h1 className="text-xl font-semibold mb-4">Devices</h1>
+                <div className='flex items-center justify-between mb-2'>
+                    <h1 className="text-lg font-semibold">Devices</h1>
                     <div className='flex items-center justify-between gap-4'>
                         <SelectBoxLinks
                             options={options}
                             selected={selected}
                             setSelected={setSelected}
+                            buttonName='New Devices'
+                            className='bg-red-600 text-white'
+                            iconColor='text-white-500'
                             onModalTrigger={() => setIsModalOpen(true)}
                         />
                         <FontAwesomeIcon icon={faDownload} className='w-10 text-black-300 cursor-pointer hover:text-blue-500 ' />
@@ -91,6 +94,7 @@ const Devices = () => {
                                     options={['Unassigned']}
                                     selected={customers}
                                     onChange={setCustomers}
+                                    className='border border-gray-300'
                                     searchplaceholder={['Search Customers']}
                                 />
                                 <DevicesFilter />
@@ -326,6 +330,7 @@ const Devices = () => {
                                                         options={['Unassigned']}
                                                         selected={customers}
                                                         onChange={setCustomers}
+                                                        className='border border-gray-300'
                                                         searchplaceholder={['Search Customer']}
                                                     />
                                                 </div>

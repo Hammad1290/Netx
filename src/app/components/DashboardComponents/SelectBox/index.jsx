@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown, faSearch } from '@fortawesome/free-solid-svg-icons'
 
-const SelectBox = ({ options, selected, onChange, searchplaceholder }) => {
+const SelectBox = ({ options, selected, onChange, searchplaceholder, className }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState('');
     const dropdownRef = useRef(null);
@@ -26,7 +26,7 @@ const SelectBox = ({ options, selected, onChange, searchplaceholder }) => {
     return (
         <div className="relative w-full" ref={dropdownRef}>
             <button
-                className="w-full border border-gray-300 rounded px-4 py-2 text-left bg-white shadow-sm flex justify-between items-center cursor-pointer"
+                className={`w-full ${className} rounded px-4 py-2 text-left bg-white flex justify-between items-center cursor-pointer`}
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span>{selected}</span>

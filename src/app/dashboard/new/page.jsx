@@ -31,7 +31,7 @@ const DashboardHome = () => {
         <>
             <div className="p-6 bg-gray-100 min-h-screen">
                 <div className='flex items-center justify-between'>
-                    <h1 className="text-2xl font-semibold mb-4">Dashboard</h1>
+                    <h1 className="text-lg font-semibold mb-4">Dashboard</h1>
                     <div className='flex gap-3'>
                         <div className="bg-white px-3 py-1 rounded-full flex items-center justify-center gap-2 border border-gray-300">
                             New

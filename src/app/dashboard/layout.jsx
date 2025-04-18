@@ -2,12 +2,19 @@
 import React, { useState } from 'react'
 import SideBar from '../components/DashboardComponents/sideBar'
 import DropdownBox from '../components/DashboardComponents/DropdownBox'
+import SelectBoxLinks from '@/app/components/DashboardComponents/SelectBoxLinks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBell, faExclamationTriangle, faQuestion, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const Dashboard = ({ children }) => {
+    const [addNew, setAddNew] = useState('');
 
-    const [addNew, setAddNew] = useState('New');
+    const options = [
+        { label: 'Ticket', value: '/dashboard/ticket/add' },
+        { label: 'Contact', value: '/dashboard/contact/add' },
+        { label: 'Customer', value: '/dashboard/customers/add' },
+        { label: 'Invoice', value: '/dashboard/ticket/add' },
+    ];
 
     return (
         <>
@@ -20,13 +27,14 @@ const Dashboard = ({ children }) => {
                         <div className="flex-1 flex flex-col">
                             <div className="flex items-center justify-between py-2 px-4">
                                 <div className="flex items-center space-x-4">
-                                    <div className="bg-gray-200 px-3 py-1 rounded-full">
-                                        <DropdownBox
-                                            options={['Ticket', 'Contact', 'Customer', 'Invoice']}
-                                            selected={addNew}
-                                            onChange={setAddNew}
-                                        />
-                                    </div>
+                                    <SelectBoxLinks
+                                        options={options}
+                                        selected={addNew}
+                                        setSelected={setAddNew}
+                                        buttonName='New'
+                                        className='bg-gray-200 '
+                                        iconColor='text-gray-600'
+                                    />
                                     <div className="flex items-center bg-white px-3 py-1 rounded-full">
                                         <FontAwesomeIcon icon={faSearch} className='w-3 text-gray-500' />
                                         <input type="text" placeholder="Search" className="ml-2 outline-none" />
