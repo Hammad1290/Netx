@@ -22,15 +22,19 @@ const Billing = () => {
     return (
         <>
             <div className='bg-white min-h-screen'>
-                <div className='p-4 flex items-center justify-between'>
-                    <h1 className='text-lg font-semibold'>Billing</h1>
-                    <span></span>
+                <div className="p-4 flex items-center justify-between">
+                    <h1 className="text-xl font-semibold">Billing</h1>
+                    <nav className="text-xs text-gray-500">
+                        <Link href='/dashboard/new' className="mr-2">Home</Link>
+                        <span className="mr-2">/</span>
+                        <span>Billing</span>
+                    </nav>
                 </div>
                 <hr className='text-gray-300' />
                 <div className='p-4'>
                     <div className='flex items-center justify-between mb-4'>
                         <p>Create invoices and collect payment from customers.<Link href='#' className='text-blue-500'> Learn more</Link></p>
-                        <Link href='/dashboard/billing' className='border px-4 py-1 rounded-full text-center hover:bg-gray-100'>
+                        <Link href='/dashboard/billing/accounting' className='border px-4 py-1 rounded-full text-center hover:bg-gray-100'>
                             Accounting Integration
                         </Link>
                     </div>
@@ -38,7 +42,7 @@ const Billing = () => {
                         <div className='border border-gray-100 w-[40%] rounded border-t-4 border-t-gray-300'>
                             <div className='flex items-center justify-between gap-6 my-4 px-2 '>
                                 <p>Invoice Batches</p>
-                                <Link href='/dashboard/billing' className='border px-4 py-1 rounded-full text-center text-white bg-red-500'>
+                                <Link href='/dashboard/billing/create' className='border px-4 py-1 rounded-full text-center text-white bg-red-500'>
                                     New invoice batch
                                 </Link>
                             </div>

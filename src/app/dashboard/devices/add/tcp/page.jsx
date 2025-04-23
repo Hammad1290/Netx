@@ -14,22 +14,22 @@ const TCP = () => {
 
     return (
         <>
-            <div className="p-6 min-h-screen">
-                <div className='flex items-center justify-between mb-4'>
-                    <div>
-                        <h1 className="text-xl font-semibold mb-4">New Device - TCP</h1>
-                        <p>You can monitor TCP devices with your installed Windows agents. Adding a TCP device enables monitoring of ports 25, 80, 443 and more.<Link href='#' className='text-blue-500'> Learn more</Link></p>
-                    </div>
-                    <div className='flex items-center gap-4'>
-                        <Link href='/dashboard/devices' className='bg-gray-200 border border-gray-300 px-4 py-2 rounded-full text-center'>
-                            Cancle
-                        </Link>
-                        <Link href='/dashboard/devices/add/tcp' className='bg-red-600 px-4 py-2 rounded-full text-center text-white'>
-                            Add
-                        </Link>
-                    </div>
+            <div className="bg-white min-h-screen">
+
+                <div className="p-4 flex items-center justify-between">
+                    <h1 className="text-xl font-semibold">New Device - TCP</h1>
+                    <nav className="text-xs text-gray-500">
+                        <Link href='/dashboard/new' className="mr-2">Home</Link>
+                        <span className="mr-2">/</span>
+                        <span>New Device</span>
+                    </nav>
                 </div>
-                <div className="w-full bg-white p-6 rounded-md border border-gray-300">
+
+                <hr className='text-gray-300' />
+
+                <div className="w-94 p-4">
+
+                    <p className='mb-4 text-nowrap'>You can monitor TCP devices with your installed Windows agents. Adding a TCP device enables monitoring of ports 25, 80, 443 and more.<Link href='#' className='text-blue-500'> Learn more</Link></p>
 
                     <div className="mb-4">
                         <div className='flex items-center mb-1'>
@@ -104,6 +104,15 @@ const TCP = () => {
                             <label className="block mb-0 text-sm">Notes</label>
                         </div>
                         <input className="w-full outline-none p-2 border border-gray-300 rounded text-sm" />
+                    </div>
+
+                    <div className='flex items-center justify-between gap-4'>
+                        <Link href='/dashboard/devices' className='bg-gray-200 border border-gray-300 px-4 py-2 rounded-full text-center'>
+                            Cancle
+                        </Link>
+                        <Link href='/dashboard/devices/add/tcp' className='bg-red-600 px-4 py-2 rounded-full text-center text-white'>
+                            Add
+                        </Link>
                     </div>
 
                 </div>

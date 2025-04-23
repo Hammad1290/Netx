@@ -13,7 +13,7 @@ const Dashboard = ({ children }) => {
         { label: 'Ticket', value: '/dashboard/ticket/add' },
         { label: 'Contact', value: '/dashboard/contact/add' },
         { label: 'Customer', value: '/dashboard/customers/add' },
-        { label: 'Invoice', value: '/dashboard/ticket/add' },
+        { label: 'Invoice', value: '/dashboard/billing' },
     ];
 
     return (
@@ -32,7 +32,7 @@ const Dashboard = ({ children }) => {
                                         selected={addNew}
                                         setSelected={setAddNew}
                                         buttonName='New'
-                                        className='bg-gray-200 '
+                                        className='bg-gray-200 gap-6'
                                         iconColor='text-gray-600'
                                     />
                                     <div className="flex items-center bg-white px-3 py-1 rounded-full">

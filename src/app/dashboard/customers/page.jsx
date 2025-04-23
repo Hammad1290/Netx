@@ -146,7 +146,7 @@ const Customers = () => {
                                             </div>
                                         </td>
                                         <td>
-                                            <span className="text-gray-700">Unassigned</span>
+                                            <Link href='/dashboard/customers/new' className="text-gray-700">Unassigned</Link>
                                         </td>
                                         <td>
 

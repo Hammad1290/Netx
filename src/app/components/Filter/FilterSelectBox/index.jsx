@@ -21,7 +21,7 @@ const FilterSelectBox = ({ options, selected, onChange }) => {
     return (
         <div className="relative w-full" ref={dropdownRef}>
             <button
-                className="w-full border border-gray-300 rounded px-4 py-2 text-left bg-white shadow-sm flex justify-between items-center cursor-pointer"
+                className="w-full border border-gray-300 rounded px-4 py-2 text-left bg-white flex justify-between items-center cursor-pointer"
                 onClick={() => setIsOpen(!isOpen)}
             >
                 <span>{selected}</span>

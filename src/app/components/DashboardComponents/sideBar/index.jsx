@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTachometerAlt, faTicketAlt, faUsers, faDesktop, faTriangleExclamation, faAngleLeft, faAngleRight, faNetworkWired, faFile } from '@fortawesome/free-solid-svg-icons'
+import { faTachometerAlt, faTicketAlt, faUsers, faDesktop, faTriangleExclamation, faAngleLeft, faAngleRight, faNetworkWired, faFile, faChartSimple } from '@fortawesome/free-solid-svg-icons'
 import Image from "next/image";
 import Link from 'next/link';
 
@@ -18,6 +18,7 @@ const SideBar = () => {
         { link: '/dashboard/alert', icon: faTriangleExclamation, text: 'Alert' },
         { link: '/dashboard/network&configuration', icon: faNetworkWired, text: 'Network & Configuration' },
         { link: '/dashboard/billing', icon: faFile, text: 'Billing' },
+        { link: '/dashboard/reports', icon: faChartSimple, text: 'Reports' },
     ]
 
     return (
@@ -38,7 +39,7 @@ const SideBar = () => {
 
                                 <Link key={index} href={val.link} className="flex items-center justify-between hover:text-gray-300 hover:bg-[#205050] p-3">
                                     <div className={`flex items-center ${isCollapsed ? null : 'space-x-3'}`}>
-                                        <FontAwesomeIcon icon={val.icon} className='text-md' />
+                                        <FontAwesomeIcon icon={val.icon} className='w-4 h-4' />
                                         <span className={`${isCollapsed ? 'hidden' : 'block'}`}>{val.text}</span>
                                     </div>
                                     <span className={`text-gray-400 ${isCollapsed ? 'hidden' : 'block'}`}>{val.text2}</span>

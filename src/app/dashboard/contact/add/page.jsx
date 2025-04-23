@@ -11,19 +11,17 @@ const addContact = () => {
 
     return (
         <>
-            <div className="p-6 min-h-screen">
-                <div className='flex items-center justify-between mb-4'>
-                    <h1 className="text-xl font-semibold ">New Ticket</h1>
-                    <div className='flex items-center gap-4'>
-                        <Link href='/dashboard/ticket/add' className='bg-gray-200 border border-gray-300 px-4 py-2 rounded-full text-center'>
-                            Cancle
-                        </Link>
-                        <Link href='/dashboard/ticket/add' className='bg-red-600 px-4 py-2 rounded-full text-center text-white'>
-                            Add
-                        </Link>
-                    </div>
+            <div className='bg-white min-h-screen'>
+                <div className="p-4 flex items-center justify-between">
+                    <h1 className="text-xl font-semibold">New Contact</h1>
+                    <nav className="text-xs text-gray-500">
+                        <Link href='/dashboard/new' className="mr-2">Home</Link>
+                        <span className="mr-2">/</span>
+                        <span>Contact</span>
+                    </nav>
                 </div>
-                <div className="w-full bg-white p-6 rounded-md border border-gray-300">
+                <hr className='text-gray-300' />
+                <div className='p-4 w-[50%]'>
 
                     <div className="mb-4">
                         <div className='flex items-center mb-1'>
@@ -108,6 +106,15 @@ const addContact = () => {
                     <div className="mb-4 flex items-center">
                         <input className="w-4 h-4" type='checkbox' />
                         <p className='text-sm ml-3'>Disable automatic ticket creation on emails from the contact</p>
+                    </div>
+
+                    <div className='flex items-center gap-4'>
+                        <Link href='/dashboard/ticket/add' className='bg-gray-200 border border-gray-300 px-4 py-2 rounded text-center'>
+                            Cancle
+                        </Link>
+                        <Link href='/dashboard/ticket/add' className='bg-red-600 px-4 py-2 rounded text-center text-white'>
+                            Add
+                        </Link>
                     </div>
 
                 </div>
