@@ -47,7 +47,7 @@ const DevicesFilter = () => {
                 </button>
                 {
                     isOpen && (
-                        <div className="absolute z-10 right-0 -top-5 bg-white p-4 rounded-md border border-gray-300 w-96">
+                        <div className="absolute z-10 right-0 -top-20 bg-white p-4 rounded-md border border-gray-300 w-96">
                             <div className="flex items-center mb-4">
                                 <div className='flex items-center gap-2' >
                                     <h2 className="text-lg font-semibold text-gray-800">Filters</h2>
@@ -67,6 +67,7 @@ const DevicesFilter = () => {
                                         options={['Unassigned']}
                                         selected={customers}
                                         onChange={setCustomers}
+                                        className='border border-gray-300'
                                         searchplaceholder={['Search Customer']}
                                     />
                                 </div>

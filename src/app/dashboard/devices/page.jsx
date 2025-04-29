@@ -1,34 +1,19 @@
 'use client'
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faLaptopCode, faGear, faSliders, faCircleCheck, faCircle, faDownload } from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck, faCircle, faDownload } from '@fortawesome/free-solid-svg-icons'
 import SelectBox from '@/app/components/DashboardComponents/SelectBox'
-import DropdownBox from '@/app/components/DashboardComponents/DropdownBox'
 import FilterSelectBox from '@/app/components/Filter/FilterSelectBox'
 import SelectBoxLinks from '@/app/components/DashboardComponents/SelectBoxLinks'
 import Link from 'next/link';
-import Image from "next/image";
-import DevicesFilter from '@/app/components/Filter/DevicesFilter'
 
 import Modal from '@/app/components/Modal'
 import { faApple, faLinux, faWindows } from '@fortawesome/free-brands-svg-icons'
+import DevicesComponent from './DevicesComponent'
 
 const Devices = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const [view, setView] = useState('Default view');
-    const [remoteAccess, setRemoteAccess] = useState('Connect');
-    const [action, setAction] = useState('Manage');
-
-    const [isChecked, setisChecked] = useState(false);
-    const handleCheckboxChange = () => {
-        setisChecked((prev) => !prev);
-    };
-
-    const buttonClick = () => {
-        alert('This ticket is deleted')
-    }
 
     // modal content
     const [step, setStep] = useState(1);
@@ -58,6 +43,8 @@ const Devices = () => {
         { label: 'Generic', value: '/dashboard/devices/add/generic' },
     ];
 
+    const [ShowSelectBoxLinks, setshowSelectBoxLinks] = useState(false);
+
     return (
         <>
             <div className="p-6 bg-gray-100 min-h-screen">
@@ -73,173 +60,15 @@ const Devices = () => {
                             iconColor='text-white-500'
                             onModalTrigger={() => setIsModalOpen(true)}
                         />
-                        <FontAwesomeIcon icon={faDownload} className='w-10 text-black-300 cursor-pointer hover:text-blue-500 ' />
+                        <FontAwesomeIcon icon={faDownload} className='w-4 text-black-300 cursor-pointer hover:text-blue-500 ' />
                     </div>
                 </div>
 
                 <div className='bg-white rounded-md border border-gray-300'>
-                    <div className="border-b border-gray-200">
-                        <div className="flex items-center justify-between p-4">
-                            <div className="flex items-center bg-white px-3 py-1 border border-gray-300 rounded">
-                                <FontAwesomeIcon icon={faSearch} className='w-3 text-gray-500' />
-                                <input type="text" placeholder="Search" className="ml-2 outline-none" />
-                            </div>
-                            <div className='flex items-center w-[40%] gap-4'>
-                                <DropdownBox
-                                    options={['Default view']}
-                                    selected={view}
-                                    onChange={setView}
-                                />
-                                <SelectBox
-                                    options={['Unassigned']}
-                                    selected={customers}
-                                    onChange={setCustomers}
-                                    className='border border-gray-300'
-                                    searchplaceholder={['Search Customers']}
-                                />
-                                <DevicesFilter />
-                            </div>
-                        </div>
-                        <hr className='text-gray-300' />
-                        <div className='flex items-center justify-between p-4'>
-                            <div className='flex items-center gap-4'>
-                                <input
-                                    type="checkbox"
-                                    checked={isChecked}
-                                    onChange={handleCheckboxChange}
-                                    className="w-4 h-4" />
-                                <button
-                                    className={`flex items-center text-sm gap-2 ${isChecked ? 'text-gray-600 hover:text-blue-600 cursor-pointer' : 'text-gray-300'} `}
-                                    disabled={!isChecked}
-                                    onClick={buttonClick}
-                                >
-                                    <FontAwesomeIcon icon={faLaptopCode} className={`w-4 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
-                                    Run script
-                                </button>
-                                <button
-                                    className={`flex items-center text-sm gap-2 ${isChecked ? 'text-gray-600 hover:text-blue-600 cursor-pointer' : 'text-gray-300'} `}
-                                    disabled={!isChecked}
-                                    onClick={buttonClick}
-                                >
-                                    <FontAwesomeIcon icon={faGear} className={`w-3 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
-                                    Assign automation profile
-                                </button>
-                                <button
-                                    className={`flex items-center text-sm gap-2 ${isChecked ? 'text-gray-600 hover:text-blue-600 cursor-pointer' : 'text-gray-300'} `}
-                                    disabled={!isChecked}
-                                    onClick={buttonClick}
-                                >
-                                    <FontAwesomeIcon icon={faGear} className={`w-3 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
-                                    Software installation
-                                </button>
-                                <button
-                                    className={`flex items-center text-sm gap-2 ${isChecked ? 'text-gray-600 hover:text-blue-600 cursor-pointer' : 'text-gray-300'} `}
-                                    disabled={!isChecked}
-                                    onClick={buttonClick}
-                                >
-                                    <FontAwesomeIcon icon={faSliders} className={`w-3 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
-                                    Assign threshold profile
-                                </button>
-                            </div>
-                            <p className='text-gray-400'>Displaying 1 of 0 devices</p>
-                        </div>
-                        <hr className='text-gray-300' />
-                        <div>
-                            <table className="w-full text-left text-sm">
-                                <thead>
-                                    <tr className="text-gray-500 border-b border-gray-300 h-[60px]">
-                                        <th></th>
-                                        <th>Customer Name</th>
-                                        <th>Details</th>
-                                        <th>Availability</th>
-                                        <th>Alerts</th>
-                                        <th>Available Patches</th>
-                                        <th>Pending</th>
-                                        <th>Remote Access</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr className="border-b border-gray-300 h-[100px] hover:bg-gray-50">
-                                        <td>
-                                            <input
-                                                type="checkbox"
-                                                checked={isChecked}
-                                                onChange={handleCheckboxChange}
-                                                className="w-4 h-4 ml-4" />
-                                        </td>
-                                        <td className='flex items-center justify-center' style={{ height: 'inherit' }}>
-                                            <div className='border border-gray-200 p-2 rounded w-fit'>
-                                                <Image
-                                                    src='/suitcase.svg'
-                                                    alt="logo"
-                                                    width={50}
-                                                    height={50}
-                                                />
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className="flex flex-col">
-                                                <span className="font-semibold mb-1">Sample Device <b className="font-semibold text-gray-500">(PC)</b> </span>
-                                                <span className="text-blue-600 mb-1">Sample Customer</span>
-                                                <span className="text-gray-500 text-xs">Last login : username (Jan 1, 2023 9:10:26 am)</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className='flex items-center gap-2'>
-                                                <div className='rounded-full w-2 h-2 bg-green-600'></div>
-                                                <span >Online</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className='flex items-center gap-4'>
-                                                <div className='text-gray-500 flex items-center justify-center flex-col'>
-                                                    <div className='w-8 h-8 bg-red-100 rounded-full flex items-center justify-center' >
-                                                        <span className='font-semibold text-red-500'>2</span>
-                                                    </div>
-                                                    Critical
-                                                </div>
-                                                <div className='text-gray-500 flex items-center justify-center flex-col'>
-                                                    <div className='w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center' >
-                                                        <span className='font-semibold text-amber-500'>2</span>
-                                                    </div>
-                                                    Warning
-                                                </div>
-                                                <div className='text-gray-500 flex items-center justify-center flex-col'>
-                                                    <div className='w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center' >
-                                                        <span className='font-semibold text-blue-500'>2</span>
-                                                    </div>
-                                                    Info
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td >
-                                        </td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                            <div className='w-max px-3 py-1 rounded-full border border-gray-300' >
-                                                <DropdownBox
-                                                    options={['Spashtop', 'Anydesk', 'Teamviewer']}
-                                                    selected={remoteAccess}
-                                                    onChange={setRemoteAccess}
-                                                />
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className='w-max px-3 py-1 rounded-full border border-gray-300' >
-                                                <DropdownBox
-                                                    options={['Manage']}
-                                                    selected={action}
-                                                    onChange={setAction}
-                                                />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+
+                    <DevicesComponent
+                        ShowSelectBoxLinks={!ShowSelectBoxLinks}
+                    />
 
                 </div>
 

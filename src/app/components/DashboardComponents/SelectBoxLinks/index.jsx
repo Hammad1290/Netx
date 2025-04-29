@@ -30,7 +30,7 @@ const SelectBoxLinks = ({ options, buttonName, setSelected, onModalTrigger, clas
 
     return (
         <>
-            <div className="relative" ref={dropdownRef}>
+            <div className="relative w-full" ref={dropdownRef}>
                 <button
                     className={`${className} px-4 py-1 rounded-full text-center flex items-center gap-2 cursor-pointer`}
                     onClick={() => setIsOpen(!isOpen)}

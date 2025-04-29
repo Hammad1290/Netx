@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from "next/image";
 import DropdownBox from '@/app/components/DashboardComponents/DropdownBox';
 import FilterBox from '@/app/components/Filter';
+import CustomersFilter from '@/app/components/Filter/CustomersFilter';
 
 const Customers = () => {
 
@@ -107,7 +108,7 @@ const Customers = () => {
                                     <FontAwesomeIcon icon={faSearch} className='w-3 text-gray-500' />
                                     <input type="text" placeholder="Search cutomer name" className="ml-2 outline-none" />
                                 </div>
-                                <FilterBox />
+                                <CustomersFilter />
                             </div>
                         </div>
                         <p className='ml-4 mb-4 text-gray-500'>Displaying 1 customers</p>
@@ -210,8 +211,6 @@ const Customers = () => {
                                                     )}
                                                 </div>
                                             )}
-
-
                                         </td>
                                         <td>
                                             <div className='flex flex-col'>

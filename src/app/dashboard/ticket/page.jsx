@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleDown, faTrash, faUserCheck } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faUserCheck } from '@fortawesome/free-solid-svg-icons'
 import SelectBox from '@/app/components/DashboardComponents/SelectBox'
 import DropdownBox from '@/app/components/DashboardComponents/DropdownBox'
 import Link from 'next/link';
