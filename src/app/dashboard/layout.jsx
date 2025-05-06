@@ -6,7 +6,12 @@ import SelectBoxLinks from '@/app/components/DashboardComponents/SelectBoxLinks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faBell, faExclamationTriangle, faQuestion, faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
+import Loading from '@/app/components/DashboardComponents/Loading'
+
 const Dashboard = ({ children }) => {
+
+    const isLoading = true;
+
     const [addNew, setAddNew] = useState('');
 
     const options = [
@@ -23,7 +28,7 @@ const Dashboard = ({ children }) => {
                     <SideBar />
                 </div>
                 <div className='w-full bg-gray-100'>
-                    <div className="flex">
+                    <div className="flex border-b border-gray-300">
                         <div className="flex-1 flex flex-col">
                             <div className="flex items-center justify-between py-2 px-4">
                                 <div className="flex items-center space-x-4">
@@ -57,12 +62,13 @@ const Dashboard = ({ children }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-blue-500 text-white text-center py-2">
+                            {/* <div className="bg-blue-500 text-white text-center py-2">
                                 <span>You’ve got 27 day(s) and 300 more agent installation(s) left in your trial </span>
                                 <button className="border border-white px-4 py-1 rounded-full">Subscribe now</button>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
+                    {/* {isLoading ? <Loading /> : children} */}
                     {children}
                 </div>
             </div>

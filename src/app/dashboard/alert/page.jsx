@@ -3,7 +3,8 @@ import React from 'react'
 const alert = () => {
     return (
         <>
-            alert
+            <div className='min-h-screen'>
+            </div>
         </>
     )
 }

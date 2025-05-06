@@ -7,6 +7,7 @@ import Image from "next/image";
 import DropdownBox from '@/app/components/DashboardComponents/DropdownBox';
 import FilterBox from '@/app/components/Filter';
 import CustomersFilter from '@/app/components/Filter/CustomersFilter';
+import Selectcountries from '@/app/components/DashboardComponents/SelectCountries/Selectcountry';
 
 const Customers = () => {
 
@@ -178,39 +179,9 @@ const Customers = () => {
                                             </div>
                                         </td>
                                         <td>
-
-                                            {selectedCountry && (
-                                                <span className="text-gray-700" onClick={resetSelection}>{selectedCountry}</span>
-                                            )}
-
-                                            {!selectedCountry && (
-                                                <div className='relative w-64'>
-                                                    <input
-                                                        type="text"
-                                                        placeholder="Add Location"
-                                                        className="py-1 w-full outline-none"
-                                                        value={searchTerm}
-                                                        onChange={(e) => setSearchTerm(e.target.value)}
-                                                    />
-
-                                                    {filtered.length > 0 && (
-                                                        <ul className="absolute top-8 left-0 border border-gray-300 mt-2 max-h-40 overflow-y-auto bg-white">
-                                                            {filtered.map((country, idx) => (
-                                                                <li
-                                                                    key={idx}
-                                                                    className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-                                                                    onMouseDown={(e) => {
-                                                                        e.preventDefault()
-                                                                        handleSelect(country)
-                                                                    }}
-                                                                >
-                                                                    {country}
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    )}
-                                                </div>
-                                            )}
+                                            <Selectcountries
+                                                placeholder="Add Location"
+                                            />
                                         </td>
                                         <td>
                                             <div className='flex flex-col'>

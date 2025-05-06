@@ -1,10 +1,10 @@
 'use client'
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
-import SelectBoxLinks from '@/app/components/DashboardComponents/SelectBoxLinks'
+import { faCheckCircle, faCopy, faSearch, faTimesCircle, faTrash } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 
-const AssetsTab = () => {
+const WorkfromhomeTab = () => {
 
     const [isChecked, setisChecked] = useState(false);
     const handleCheckboxChange = () => {
@@ -15,31 +15,23 @@ const AssetsTab = () => {
         alert('This ticket is deleted')
     }
 
-    const [assetselected, setAssetselected] = useState('');
-
-    const assetsoptions = [
-        { label: 'New Assets', value: '/dashboard/admin/custom-asset-types/create' },
-        { label: 'Import Assets', value: '/dashboard/admin/import' },
-    ];
-
     return (
         <>
             <div>
+                <div className='p-4'>
+                    <p>Enable contacts to remotely access their work computers from home. <Link href='#' className='text-blue-500'> Learn more</Link></p>
+                </div>
+                <hr className='text-gray-300' />
                 <div className="flex items-center justify-between p-4">
                     <div className="flex items-center bg-white px-3 py-1 border border-gray-300 rounded">
                         <FontAwesomeIcon icon={faSearch} className='w-3 text-gray-500' />
                         <input type="text" placeholder="Search" className="ml-2 outline-none" />
                     </div>
-                    <div>
-                        <SelectBoxLinks
-                            options={assetsoptions}
-                            selected={assetselected}
-                            setSelected={setAssetselected}
-                            buttonName='Manage Assets'
-                            className='bg-red-600 text-white'
-                            iconColor='text-white-500'
-                        />
-                    </div>
+
+                    <button className='border rounded-full px-4 flex items-center gap-2 text-sm cursor-pointer'>
+                        <FontAwesomeIcon icon={faCopy} className='w-3 text-gray-500' />
+                        Share Link
+                    </button>
                 </div>
                 <hr className='text-gray-300' />
                 <div className='flex items-center justify-between p-4'>
@@ -49,19 +41,18 @@ const AssetsTab = () => {
                             disabled={!isChecked}
                             onClick={buttonClick}
                         >
-                            <FontAwesomeIcon icon={faEdit} className={`w-4 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
-                            Edit
+                            <FontAwesomeIcon icon={faCheckCircle} className={`w-4 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
+                            Enable
                         </button>
                         <button
                             className={`flex items-center text-sm gap-2 ${isChecked ? 'text-gray-600 hover:text-blue-600 cursor-pointer' : 'text-gray-300'} `}
                             disabled={!isChecked}
                             onClick={buttonClick}
                         >
-                            <FontAwesomeIcon icon={faTrash} className={`w-4 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
-                            Delete
+                            <FontAwesomeIcon icon={faTimesCircle} className={`w-4 ${isChecked ? 'text-gray-600 hover:text-blue-600' : 'text-gray-300'}`} />
+                            Disable
                         </button>
                     </div>
-                    <p className='text-gray-400'>Displaying 1 of 0 devices</p>
                 </div>
                 <hr className='text-gray-300' />
                 <div>
@@ -78,18 +69,14 @@ const AssetsTab = () => {
                                             className='w-4 h-4' />
                                     </div>
                                 </th>
-                                <th>Name</th>
-                                <th>Asset type</th>
-                                <th>Status</th>
-                                <th>Purchased date</th>
-                                <th>Warranty expiration date</th>
-                                <th>Folder</th>
+                                <th>Agent</th>
                                 <th>Contact</th>
+                                <th>Phone(2FA)</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr className="border-b border-gray-300 h-[100px] hover:bg-gray-50">
-                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
@@ -104,4 +91,4 @@ const AssetsTab = () => {
     )
 }
 
-export default AssetsTab
+export default WorkfromhomeTab

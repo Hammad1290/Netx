@@ -11,7 +11,7 @@ const ContactsTab = ({ }) => {
 
     const manageContactsoptions = [
         { label: 'New Contact', value: '/dashboard/contact/add' },
-        { label: 'Import contacts (.csv)', value: '/dashboard/contact/add' },
+        { label: 'Import contacts (.csv)', value: '/dashboard/admin/import' },
         { label: 'sync with Azure AD', value: '/dashboard/contact/add' },
     ];
 

@@ -11,55 +11,55 @@ const Reports = () => {
             icon: faChartSimple,
             title: "General",
             items: [
-                { label: "General", desc: "General ticketing metrics" },
-                { label: "Load analysis", desc: "Ticket load by status and arrival time" },
-                { label: "Top load", desc: "Support-heavy customer analysis" },
-                { label: "Service Level Agreement (SLA)", desc: "Ticketing metrics in relation to SLAs" },
-                { label: "Recent Processes", desc: "Real-time outcomes of recent processes" },
+                { label: "General", desc: "General ticketing metrics", link: '/dashboard/reports/template/general' },
+                { label: "Load analysis", desc: "Ticket load by status and arrival time", link: '/dashboard/reports/template/load-analysis' },
+                { label: "Top load", desc: "Support-heavy customer analysis", link: '/dashboard/reports/template/general' },
+                { label: "Service Level Agreement (SLA)", desc: "Ticketing metrics in relation to SLAs", link: '/dashboard/reports/template/general' },
+                { label: "Recent Processes", desc: "Real-time outcomes of recent processes", link: '/dashboard/reports/template/general' },
             ],
         },
         {
             icon: faWaveSquare,
             title: "Monitoring",
             items: [
-                { label: "System at-a-glance", desc: "General alerts metrics" },
-                { label: "Customer health", desc: "Customer health based on alerts" },
-                { label: "Agent health", desc: "Agent health scores" },
-                { label: "Auditor", desc: "Customer inventory summary" },
-                { label: "Microsoft licensing", desc: "Microsoft licensing information" },
-                { label: "Patch search & deploy", desc: "Devices with specified patches installed" },
-                { label: "Patch status summary", desc: "Devices with missing patches" },
-                { label: "Patch & automation feedback", desc: "Patch and IT automation activity" },
-                { label: "Software inventory", desc: "Installed software on devices" },
+                { label: "System at-a-glance", desc: "General alerts metrics", link: '/dashboard/reports/template/general' },
+                { label: "Customer health", desc: "Customer health based on alerts", link: '/dashboard/reports/template/general' },
+                { label: "Agent health", desc: "Agent health scores", link: '/dashboard/reports/template/general' },
+                { label: "Auditor", desc: "Customer inventory summary", link: '/dashboard/reports/template/general' },
+                { label: "Microsoft licensing", desc: "Microsoft licensing information", link: '/dashboard/reports/template/general' },
+                { label: "Patch search & deploy", desc: "Devices with specified patches installed", link: '/dashboard/reports/template/general' },
+                { label: "Patch status summary", desc: "Devices with missing patches", link: '/dashboard/reports/template/general' },
+                { label: "Patch & automation feedback", desc: "Patch and IT automation activity", link: '/dashboard/reports/template/general' },
+                { label: "Software inventory", desc: "Installed software on devices", link: '/dashboard/reports/template/general' },
             ],
         },
         {
             icon: faUser,
             title: "Technicians",
             items: [
-                { label: "Technician comparison", desc: "Ticket-handling performance comparison" },
-                { label: "Technician performance", desc: "Technician ticket-handling performance" },
+                { label: "Technician comparison", desc: "Ticket-handling performance comparison", link: '/dashboard/reports/template/general' },
+                { label: "Technician performance", desc: "Technician ticket-handling performance", link: '/dashboard/reports/template/general' },
             ],
         },
         {
             icon: faMoneyBill1Wave,
             title: "Profitability",
             items: [
-                { label: "Customer profitability", desc: "Profit breakdown by customer" },
-                { label: "Top retainer customers", desc: "Top profitable retainer contracts" },
-                { label: "Bottom retainer customers", desc: "Least profitable retainer contracts" },
-                { label: "Timesheet", desc: "Timesheet of billable hours" },
-                { label: "Customer periodic", desc: "Customer information, health, and activity" },
-                { label: "Products and expenses", desc: "Customer products and expenses" },
-                { label: "Block contracts balance", desc: "Customer block contract usage" },
+                { label: "Customer profitability", desc: "Profit breakdown by customer", link: '/dashboard/reports/template/general' },
+                { label: "Top retainer customers", desc: "Top profitable retainer contracts", link: '/dashboard/reports/template/general' },
+                { label: "Bottom retainer customers", desc: "Least profitable retainer contracts", link: '/dashboard/reports/template/general' },
+                { label: "Timesheet", desc: "Timesheet of billable hours", link: '/dashboard/reports/template/general' },
+                { label: "Customer periodic", desc: "Customer information, health, and activity", link: '/dashboard/reports/template/general' },
+                { label: "Products and expenses", desc: "Customer products and expenses", link: '/dashboard/reports/template/general' },
+                { label: "Block contracts balance", desc: "Customer block contract usage", link: '/dashboard/reports/template/general' },
             ],
         },
         {
             icon: faFaceSmile,
             title: "Satisfaction",
             items: [
-                { label: "Satisfied customers", desc: "Customer satisfaction overview" },
-                { label: "Dissatisfied customers", desc: "Customer dissatisfaction overview" },
+                { label: "Satisfied customers", desc: "Customer satisfaction overview", link: '/dashboard/reports/template/general' },
+                { label: "Dissatisfied customers", desc: "Customer dissatisfaction overview", link: '/dashboard/reports/template/general' },
             ],
         },
     ];
@@ -110,7 +110,7 @@ const Reports = () => {
                         <div>
                             <h2 className="font-semibold text-base">Operational reports</h2>
                             <p className="text-sm text-gray-500">
-                                Gain insights into ticket handling, system health, and end user satisfaction. <a href="#" className="text-blue-600">Learn more</a>
+                                Gain insights into ticket handling, system health, and end user satisfaction. <Link href="#" className="text-blue-600">Learn more</Link>
                             </p>
                         </div>
                     </div>
@@ -125,7 +125,7 @@ const Reports = () => {
                                 <div className="h-64 overflow-auto">
                                     {section.items.map((item, i) => (
                                         <div key={i} className="px-4 hover:bg-gray-100 ">
-                                            <Link href='/dashboard/reports' >
+                                            <Link href={item.link} >
                                                 <div className="border-b border-gray-300 py-2">
                                                     <p className="text-xs font-medium text-gray-800">{item.label}</p>
                                                     {item.desc && <p className="text-xs text-gray-400">{item.desc}</p>}

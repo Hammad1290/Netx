@@ -16,6 +16,8 @@ import TicketsTab from '../CustomerDetails/TicketsTab'
 import AlertsTab from '../CustomerDetails/AlertsTab'
 import PasswordsTab from '../CustomerDetails/PasswordsTab'
 import AttachmentsTab from '../CustomerDetails/AttachmentsTab'
+import WorkfromhomeTab from '../CustomerDetails/WorkfromhomeTab'
+import InvoicesTab from '../CustomerDetails/InvoicesTab'
 
 const CustomerDetail = () => {
 
@@ -29,6 +31,8 @@ const CustomerDetail = () => {
         { tabTitle: 'Alerts', activeTab: 'alerts' },
         { tabTitle: 'Passwords', activeTab: 'passwords' },
         { tabTitle: 'Attachments', activeTab: 'attachments' },
+        { tabTitle: 'Work from home', activeTab: 'Workfromhome' },
+        { tabTitle: 'Invoices', activeTab: 'invoices' },
     ]
 
     const [activeTab, setActiveTab] = useState("overview");
@@ -146,7 +150,7 @@ const CustomerDetail = () => {
 
                                             <button
                                                 key={index}
-                                                className={`px-8 py-4 cursor-pointer ${activeTab === val.activeTab
+                                                className={`px-6 py-4 cursor-pointer ${activeTab === val.activeTab
                                                     ? "text-black border-b-3 border-pink-500"
                                                     : "text-gray-500"
                                                     }`}
@@ -165,7 +169,7 @@ const CustomerDetail = () => {
                             {activeTab === "overview" &&
 
                                 <>
-                                    <div className='px-8 py-2'>
+                                    <div className='px-6 py-2'>
                                         <div className="grid grid-cols-3 gap-4 mt-2">
                                             <div className='border-r border-gray-300'>
                                                 <h1 className='mb-2'>System fields</h1>
@@ -358,6 +362,16 @@ const CustomerDetail = () => {
                             {activeTab === "attachments" &&
 
                                 <AttachmentsTab />
+
+                            }
+                            {activeTab === "Workfromhome" &&
+
+                                <WorkfromhomeTab />
+
+                            }
+                            {activeTab === "invoices" &&
+
+                                <InvoicesTab />
 
                             }
                         </div>
